@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import { images } from '../../constants';
 import './About.scss';
+import { useFor, client} from '../../client';
 
 const abouts = [
   
@@ -14,6 +15,19 @@ const abouts = [
 ];
 
 const About = () => {
+   const [abouts, setAbouts] = useState([]);
+
+   useEffect(() => {
+     const query = '*[_type == "abouts"]'
+
+     client.fetch(query)
+   }, []);
+   
+   
+
+
+
+
   return (
     <>
     <h2 className="head-text">I Know that <span>Good Development </span> <br /> means <span>Good Business</span></h2>
