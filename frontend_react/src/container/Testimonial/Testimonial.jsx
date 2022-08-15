@@ -1,19 +1,20 @@
 import React, {useState, useEffect  } from 'react'; 
-import {motion} from 'framer-motion';
 import {HiChevronLeft, HiChevronRight} from 'react-icons/hi';
+
+import {motion} from 'framer-motion';
 
 
 import {AppWrap, MotionWrap} from '../../wrapper';
 import {urlFor, client} from '../../client';
-
-
 import './Testimonial.scss';
 
 const Testimonial = () => {
 
-  const [brands, setBrands] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [testimonials, setTestimonials] = useState([]);
+  const [brands, setBrands] = useState([]);
+ 
+
   
    const handleClick = (index) => {
     setCurrentIndex(index)
@@ -23,7 +24,7 @@ const Testimonial = () => {
 
   useEffect(() => {
     const query = '*[_type == "testimonials"]';
-    const skillsQuery = '*[_type == "brands"]';
+    const brandsQuery = '*[_type == "brands"]';
 
     client.fetch(query)
     .then((data) => {
@@ -42,7 +43,7 @@ const Testimonial = () => {
         {testimonials.lenght && (
           <>
           <div className="app__testimonial-item app__flex">
-             <img src={urlFor(test.imgUrl)}  alt="testimonial"/>
+             {/* <img src={urlFor(test.imgUrl)}  alt="testimonial"/> */}
              <div className="app__testimonial-content">
               <p className="p-text">{test.feedback}</p>
               <div>
@@ -71,7 +72,7 @@ const Testimonial = () => {
                 <motion.div
                 whileInView={{opacity: [0, 1]}}
                 transition={{duration: 0.5, type: 'tween'}} 
-                key={brand_id}
+                key={brand._id}
                 >
                   <img src={urlFor(brand.imgUrl)} alt={brand.name} />
                 </motion.div>
