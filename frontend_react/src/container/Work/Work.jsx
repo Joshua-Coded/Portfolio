@@ -3,8 +3,9 @@ import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
+import { client } from '../../client';
 import './Work.scss';
+import { images } from '../../constants';
 
 const Work = () => {
   const [works, setWorks] = useState([]);
@@ -62,7 +63,7 @@ const Work = () => {
             <div
               className="app__work-img app__flex"
             >
-              {/* <img src={urlFor(work.imgUrl)} alt={work.name} /> */}
+              <img src={images.adidas} alt={work.name} />
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}

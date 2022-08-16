@@ -2,10 +2,10 @@ import React, {useState, useEffect  } from 'react';
 import {HiChevronLeft, HiChevronRight} from 'react-icons/hi';
 
 import {motion} from 'framer-motion';
-
+import {images} from '../../constants';
 
 import {AppWrap, MotionWrap} from '../../wrapper';
-import {urlFor, client} from '../../client';
+import {client} from '../../client';
 import './Testimonial.scss';
 
 const Testimonial = () => {
@@ -43,7 +43,8 @@ const Testimonial = () => {
         {testimonials.lenght && (
           <>
           <div className="app__testimonial-item app__flex">
-             {/* <img src={urlFor(test.imgUrl)}  alt="testimonial"/> */}
+          {/* urlFor(test.imgUrl) */}
+             <img src={images.bolt}  alt="testimonial"/>
              <div className="app__testimonial-content">
               <p className="p-text">{test.feedback}</p>
               <div>

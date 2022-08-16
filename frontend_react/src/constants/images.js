@@ -23,7 +23,7 @@ import about04 from '../assets/about04.png';
 
 import circle from '../assets/circle.svg';
 
-
+import joshua from '../assets/joshua.png'
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
 import asus from '../assets/asus.png';
@@ -50,6 +50,7 @@ export default {
   about04,
   circle,
   adidas,
+  joshua,
   amazon,
   asus,
   bolt, 
